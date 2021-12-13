@@ -1,5 +1,5 @@
 
-
+// si je rajoute un commentaire 
 async function getPhotographers() {
     fetch("../../data/photographers.json")
         .then(res => res.json())
