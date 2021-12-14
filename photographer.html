@@ -1,36 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FishEye</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/photographers.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <script type='module' src="js/main.js"></script>
+</head>
+
+
+<body>
+  <!-- BANNER -->
+
+  <header role="banner">
+    <a href="index.html" title="HomePage"><img
+        src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/logo.png" alt="FishEye Home Page"></a>
+    <!-- NAV -->
+    <nav class="filters" aria-label="photographer categories" role="navigation">
+      <ul>
+        <a href='#'>
+          <li data-filter="portrait">#portrait</li>
+        </a>
+        <a href='#'>
+          <li data-filter="art">#art</li>
+        </a>
+        <a href='#'>
+          <li data-filter="fashion">#fashion</li>
+        </a>
+        <a href='#'>
+          <li data-filter="architecture">#architecture</li>
+        </a>
+        <a href='#'>
+          <li data-filter="travel">#travel</li>
+        </a>
+        <a href='#'>
+          <li data-filter="sport">#sport</li>
+        </a>
+        <a href='#'>
+          <li data-filter="animals">#animals</li>
+        </a>
+        <a href='#'>
+          <li data-filter="events">#events</li>
+        </a>
+      </ul>
+    </nav>
+    <h1>Nos Photographes</h1>
+  </header>
+
+  <main id="main">
+    <!-- BUTTON 'PASSER AU CONTENU' -->
+    <a id="main-photographers-link" href="#photographers">Passer au contenu</a>
+    <!-- PHOTOGRAPHERS -->
+    <section id="photographers" aria-label="photographers">
+    </section>
+  </main>
+
+
+  <!-- <div id="contact_modal">
+    <div class="modal">
+      <header>
+        <h2>Contactez-moi</h2>
+        <img src="assets/icons/close.svg" onclick="closeModal()" />
+      </header>
+      <form>
+        <div>
+          <label>Prénom</label>
+          <input />
+        </div>
+        <button class="contact_button">Envoyer</button>
+      </form>
+    </div>
+  </div>
+  <script src="/scripts/utils/contactForm.js"></script> -->
+</body>
+
 </html>
