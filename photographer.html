@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FishEye</title>
+  <title>Fisheye - photographe</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/photographers.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
@@ -17,63 +17,62 @@
 <body>
   <!-- BANNER -->
 
-  <header role="banner">
-    <a href="index.html" title="HomePage"><img
-        src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/logo.png" alt="FishEye Home Page"></a>
-    <!-- NAV -->
-    <nav class="filters" aria-label="photographer categories" role="navigation">
-      <ul>
-        <a href='#'>
-          <li data-filter="portrait">#portrait</li>
-        </a>
-        <a href='#'>
-          <li data-filter="art">#art</li>
-        </a>
-        <a href='#'>
-          <li data-filter="fashion">#fashion</li>
-        </a>
-        <a href='#'>
-          <li data-filter="architecture">#architecture</li>
-        </a>
-        <a href='#'>
-          <li data-filter="travel">#travel</li>
-        </a>
-        <a href='#'>
-          <li data-filter="sport">#sport</li>
-        </a>
-        <a href='#'>
-          <li data-filter="animals">#animals</li>
-        </a>
-        <a href='#'>
-          <li data-filter="events">#events</li>
-        </a>
-      </ul>
-    </nav>
-    <h1>Nos Photographes</h1>
+  <header>
+    <img src="./assets/images/logo.png" class="logo" />
   </header>
-
   <main id="main">
-    <!-- BUTTON 'PASSER AU CONTENU' -->
-    <a id="main-photographers-link" href="#photographers">Passer au contenu</a>
-    <!-- PHOTOGRAPHERS -->
-    <section id="photographers" aria-label="photographers">
+    <section class="photograph-header">
+      <div class="photographer__info">
+        <h1 class="photographer__name"></h1>
+        <div class="photographer__location">Pamiers FR</div>
+        <cite class="photographer__tagline">Je ponce donc je sue</cite>
+      </div>
+      <button class="contact_button">Contactez-moi</button>
+      <img class="photographer__id" />
+    </section>
+    <section id="media-section">
+      <div class="media__filter">
+        <span>Trier par</span>
+        <div class="select"></div>
+      </div>
+      <div class="gallery"></div>
     </section>
   </main>
-
 
   <div id="contact_modal">
     <div class="modal">
       <header>
         <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" />
+        <img src="assets/icons/close.svg" class="close_button" />
+        <!-- onclick="closeModal()" /> -->
       </header>
       <form>
         <div>
-          <label>Prénom</label>
-          <input />
+          <label for="prenom">Prénom</label>
+          <input id="prenom" name="prenom" type="text" />
+        </div>
+        <div>
+          <label for="nom">Nom</label>
+          <input id="nom" name="nom" type="text" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" />
+        </div>
+        <div>
+          <label for="message">Votre message></label>
+          <textarea id="message" name="message"></textarea>
         </div>
         <button class="contact_button">Envoyer</button>
       </form>
+    </div>
+  </div>
+  <div class="media-modale">
+    <div class="lightbox">
+      <span class="lightbox__close">CLOSE</span>
+      <div class="lightbox__media"></div>
+      <span class="lightbox__next">NEXT</span>
+      <span class="lightbox__previous">PREVIOUS</span>
     </div>
   </div>
   <script src="/scripts/utils/contactForm.js"></script>

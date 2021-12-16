@@ -1,76 +1,280 @@
 #contact_modal {
-    display: none;
+  display: none;
 }
-
+/* -------------------- PHOTOGRAPH INFORMATION --------------------  */
 .photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
+  background-color: var(--light-grey);
+  height: 18.75rem;
+  margin: 0 6.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
 }
 
 .contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  margin: auto;
+}
+.photograph-header img {
+  height: 12.5rem;
+  width: 12.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.photographer__info {
+  margin: 0;
+  padding: 0;
+}
+.photographer__name {
+  color: var(--secondary);
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.photographer__location {
+  line-height: 2rem;
+  color: var(--primary);
+  font-size: 1.4rem;
+}
+
+.photographer__tagline {
+  color: var(--grey);
+  font-size: 1.1rem;
+  font-style: normal;
+  line-height: 3rem;
+}
+/* -------------------- FILTER ELEMENTS --------------------  */
+.media__filter {
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+.select {
+  position: relative;
+  margin-left: 2rem;
+  width: 10rem;
+  cursor: pointer;
+  position: relative;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 0.4rem;
+  z-index: 1;
+}
+
+.select__options {
+  display: none;
+  transform-origin: top;
+  list-style-type: none;
+  position: absolute;
+  bottom: -5.8rem;
+  background-color: var(--primary);
+  width: 10rem;
+  padding: 0 1rem;
+  box-shadow: 0 0.3rem 0.1rem 0 rgba(0, 0, 0, 0.1);
+  animation: filterMenu 150ms ease-in-out;
+}
+.select__options:last-child {
+  border-radius: 0 0 0.4rem 0.4rem;
+}
+
+.select__option {
+  border-top: 1px solid white;
+  padding: 0.8rem 0;
+}
+
+.select__current {
+  position: relative;
+  padding: 1.2rem 1rem;
+}
+
+/* 	clip-path: polygon(100% 65%, 100% 41%, 50% 0, 0 41%, 0 65%, 50% 25%);
+ */
+
+/* Styling the arrow of the select */
+.select__current::after {
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  transform: rotate(180deg);
+  background-color: white;
+  clip-path: polygon(100% 65%, 100% 41%, 50% 0, 0 41%, 0 65%, 50% 25%);
+}
+/* -------------------- GALLERY --------------------  */
+.gallery {
+  display: flex;
+  justify-content: left; /* gap: 6rem; */
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  row-gap: 2rem;
+  column-gap: 6.14rem;
+}
+
+.media-card {
+  margin-bottom: 2rem;
+}
+.media-card__container {
+  width: 22rem;
+  height: 22rem;
+}
+
+.media-card__media {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.media-card__description {
+  font-size: 1.2rem;
+  color: var(--primary);
+  border-bottom: 1px solid black;
+}
+/* -------------------- MEDIA LIGHTBOX --------------------  */
+
+.media-modale {
+  display: none;
+  z-index: 2;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.lightbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.lightbox__media {
+  height: 900px;
+  /* max-width: 600px; */
+}
+
+.lightbox__media > img,
+.lightbox__media > video {
+  /* width: 100%; */
+  height: 100%;
+  object-fit: contain;
+}
+/* -------------------- CONTACT MODAL --------------------  */
+
+#contact_modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(196, 196, 196, 0.4);
+  z-index: 2;
+}
+
+.contact_button {
+  position: relative;
+  left: -5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.69rem;
+  width: 10.62rem;
+  height: 4.38rem;
+  border: none;
+  background-color: var(--primary);
+  border-radius: 0.31rem;
+  cursor: pointer;
+}
+
+.modal {
+  border-radius: 0.31rem;
+  background-color: var(--light-red);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.19rem;
+  margin: auto;
 }
 
 .modal header {
-    justify-content: space-between;
-    width: 100%;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .modal header img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .modal header h2 {
-    font-size: 64px;
-    font-weight: normal;
-    text-align: center;
+  font-size: 4rem;
+  font-weight: normal;
+  text-align: center;
 }
 
 form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 form label {
-    color: #312E2E;
-    font-size: 36px;
+  color: var(--dark-grey);
+  font-size: 2.25rem;
 }
 
 form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 1.62rem;
 }
 
 form input {
-    width: 100%;
-    height: 68px;
-    border: none;
-    border-radius: 5px;
+  width: 100%;
+  height: 4.25rem;
+  border: none;
+  border-radius: 0.31rem;
+}
+
+@keyframes filterMenu {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
